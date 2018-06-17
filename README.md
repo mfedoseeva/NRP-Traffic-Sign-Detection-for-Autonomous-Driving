@@ -14,6 +14,6 @@ recognized automatically (e.g. letting the car adjust its speed)
 - [ ] Environment setup in NRP (street, car, signs)
 - [ ] Car logic, reaction to signs
 - [ ] Dataset preparation and CNN training
-- [ ] Environment setup in NRP, path planning of cars
+- [ ] Model integration, inference interface and image processing
 
 ![Project Image](description/nrp.png)
