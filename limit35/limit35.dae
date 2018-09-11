@@ -422,7 +422,7 @@
     </library_effects>
     <library_images>
         <image id="ID8">
-            <init_from>limit35/speed_limit_35.png</init_from>
+            <init_from>limit35/limit100.jpg</init_from>
         </image>
         <image id="ID17">
             <init_from>limit35/stop_sign_-_back_-_brown.png</init_from>
