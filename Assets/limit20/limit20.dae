@@ -422,7 +422,7 @@
     </library_effects>
     <library_images>
         <image id="ID8">
-            <init_from>limit20/limit90.jpg</init_from>
+            <init_from>limit20/limit70.jpg</init_from>
         </image>
         <image id="ID17">
             <init_from>limit20/stop_sign_-_back_-_brown.png</init_from>
