@@ -14,10 +14,12 @@ Adding assets to NRP:
 
 
 1. 
-copy files/ditectories from your computer to container
+copy files/directories from your computer to container:
+	
 	docker cp /local/path container_name:/full/path
 
 2.
-to edit documents in container need first to connect to a running container and run the shell
+to edit documents in container need first to connect to a running container and run the shell:
+
 	docker exec -it container_name /bin/bash
 

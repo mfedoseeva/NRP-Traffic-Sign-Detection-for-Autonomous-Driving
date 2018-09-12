@@ -315,7 +315,7 @@
         </geometry>
     </library_geometries>
     <library_materials>
-        <material id="ID6" name="speed_limit_35">
+        <material id="ID6" name="speed_limit_100">
             <instance_effect url="#ID7" />
         </material>
         <material id="ID15" name="stop_sign_-_back_-_brown">
@@ -422,16 +422,16 @@
     </library_effects>
     <library_images>
         <image id="ID8">
-            <init_from>limit35/limit100.jpg</init_from>
+            <init_from>limit100/limit100.jpg</init_from>
         </image>
         <image id="ID17">
-            <init_from>limit35/stop_sign_-_back_-_brown.png</init_from>
+            <init_from>limit100/stop_sign_-_back_-_brown.png</init_from>
         </image>
         <image id="ID30">
-            <init_from>limit35/Sign_Post_-_Brown_-_trans.png</init_from>
+            <init_from>limit100/Sign_Post_-_Brown_-_trans.png</init_from>
         </image>
         <image id="ID47">
-            <init_from>limit35/material_6.jpg</init_from>
+            <init_from>limit100/material_6.jpg</init_from>
         </image>
     </library_images>
     <library_nodes>
