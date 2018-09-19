@@ -1,0 +1,22 @@
+check documentation requirements to make sure no relevant content is missing in this outline draft
+
+
+
+	abstract
+	
+	introduction & motivation
+	
+	
+	cognitive functions and models involved
+	
+	architecture and implementation
+	
+	experiments and evaluation
+	
+	conclusion
+		summary
+		discussion
+		limitations
+		outlook
+	
+	references
