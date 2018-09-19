@@ -1,0 +1,45 @@
+=================================
+ABOUT THIS FILE:
+this is an attempt to have a comprehensive overview of all 'requirements' that apply to the documentation
+so far i checked the outline of the template, the pdf that describes the semeseter project & deliverables, and the submission page on moodle
+
+requirements are grouped according to the documents that mention them (grouping is by indentation)
+one requirement is listed per line, with a few keywords at the beginning, and sometimes by a copy of the exact words how they described the requirements, in case one wants to double-check what they meant
+=================================
+
+outline according to template
+	
+	abstract
+	
+	introduction & motivation
+	
+	
+	cognitive functions and models involved
+	
+	architecture and implementation
+	
+	experiments and evaluation
+	
+	conclusion
+		summary
+		discussion
+		limitations
+		outlook
+	
+	references
+	
+required parts according to semester project pdf
+	progress report: Report on the progress of your project and document who did what.
+	document applications & explain approach: Document your application and explain your approach with respect to the theoretical framework introduced in the lecture.
+	Describe your implementation and highlight what is still missing (and why).
+	follow template: We will provide a template. Your documentation layout needs to comply to this template!
+	
+	also: 
+		document code!
+		DEMO VIDEO
+
+requirements according to moodle page:
+	references for code & science: Please sufficiently reference all code and scientific resources you used. 
+	~10 pages:  Your documentation should be about 10 pages.
+	readme/install & use intructions: installation and usage instructions as a documentation appendix or readme file
+
