@@ -1,4 +1,4 @@
-* copy the entire foler "project_traffic_signs" to nrp container Experiments
+* copy the entire folder "project_traffic_signs" to nrp container Experiments
 ``` 
 docker cp /local/path nrp:/home/bbpnrsoa/nrp/src/Experiments
 ```
@@ -14,5 +14,9 @@ docker cp /local/path/model_library.json nrp:/home/bbpnrsoa/nrp/src/Models/libra
 ``` 
 docker cp /local/path/street.sdf nrp:/home/bbpnrsoa/nrp/src/Models
 ```
+* you need to have tensorflow object detection api installed in container. Follow instructions
+from readme.txt in the "Project traffic signs" folder. 
+* you need to have the frozen_inference_graph.pb and label_map.pbtxt in the following directory 
+"/home/bbpnrsoa/.opt/graph_def"
 * clear cache in browser. if needed run ./nrp_installer.sh restart
 * our experiment will appear as a template under the name "project traffic signs"
