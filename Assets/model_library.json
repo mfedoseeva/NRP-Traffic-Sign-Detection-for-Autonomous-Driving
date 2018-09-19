@@ -1,26 +1,5 @@
 [
     {
-        "title": "Roads",
-        "thumbnail": "shapes.png",
-        "models": [
-            {
-                "modelPath": "road",
-                "modelTitle": "Urban Road",
-                "thumbnail": "img/esv/objects/box.png"
-            },
-            {
-                "modelPath": "limit20",
-                "modelTitle": "Limit 20",
-                "thumbnail": "img/esv/objects/sphere.png"
-            },
-            {
-                "modelPath": "limit100",
-                "modelTitle": "Limit 100",
-                "thumbnail": "img/esv/objects/cylinder.png"
-            }
-        ]
-    },
-    {
         "title": "Shapes",
         "thumbnail": "shapes.png",
         "models": [
@@ -58,6 +37,26 @@
             {
                 "modelPath": "directionallight",
                 "modelTitle": "Directional Light",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "road",
+                "modelTitle": "Road",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "limit20",
+                "modelTitle": "Limit 20",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "stop",
+                "modelTitle": "Stop",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "limit100",
+                "modelTitle": "Limit 100",
                 "thumbnail": "img/esv/objects/directionallight.png"
             }
         ]
