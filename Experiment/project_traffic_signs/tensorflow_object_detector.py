@@ -3,28 +3,32 @@
 ## https://github.com/GoogleCloudPlatform/tensorflow-object-detection-example
 ##
 # internal TensorFlow state variables to persist
+@nrp.MapVariable("tensorflow_venv", initial_value="/home/bbpnrsoa/.opt/tensorflow_venv")
+@nrp.MapVariable("object_detection_api", initial_value="/home/bbpnrsoa/.opt/models/research")
+@nrp.MapVariable("model_path", initial_value="/home/bbpnrsoa/.opt/graph_def")
+@nrp.MapVariable("detection_threshold", initial_value=0.6)
 @nrp.MapVariable("detection_graph", initial_value=None)
 @nrp.MapVariable("sess", initial_value=None)
 @nrp.MapVariable("category_index", initial_value=None)
 @nrp.MapVariable("bridge", initial_value=None)
-@nrp.MapVariable("state", initial_value=None, scope=nrp.GLOBAL)
-@nrp.MapVariable("target", initial_value=None, scope=nrp.GLOBAL)
+@nrp.MapVariable("sign", initial_value=None, scope=nrp.GLOBAL)
 # input generators to drive the Braitenberg brain
-@nrp.MapSpikeSource("left_eye", nrp.brain.sensors[slice(0, 3, 2)], nrp.poisson)
-@nrp.MapSpikeSource("right_eye", nrp.brain.sensors[slice(1, 4, 2)], nrp.poisson)
+# @nrp.MapSpikeSource("left_eye", nrp.brain.sensors[slice(0, 3, 2)], nrp.poisson)
+# @nrp.MapSpikeSource("right_eye", nrp.brain.sensors[slice(1, 4, 2)], nrp.poisson)
 # subscribe to images from the robot
 @nrp.MapRobotSubscriber("camera", Topic('/husky/camera', sensor_msgs.msg.Image))
 # publish an annotated image as output of this transfer function
 @nrp.Neuron2Robot(Topic('/detections', sensor_msgs.msg.Image))
-def object_detection(t, detection_graph, sess, category_index, bridge, state, target, camera, left_eye, right_eye):
-
+def object_detection(t, tensorflow_venv, object_detection_api, model_path, detection_threshold, detection_graph, sess, category_index, bridge, sign, camera): #, left_eye, right_eye):
+    from PIL import Image, ImageDraw
+    import numpy
     # initialize the TensorFlow Object Detection session and store it as needed
     if detection_graph.value is None:
 
         # import TensorFlow in the NRP, update this path for your local installation
         try:
             import site
-            site.addsitedir('<path to tensorflow venv>/lib/python2.7/site-packages')
+            site.addsitedir(tensorflow_venv.value + '/lib/python2.7/site-packages')
             import tensorflow as tf
         except:
             clientLogger.info("Unable to import TensorFlow, did you change the path in the transfer function?")
@@ -34,16 +38,17 @@ def object_detection(t, detection_graph, sess, category_index, bridge, state, ta
         import sys
 
         # paths to saved model states, update these paths if different in your local installation
-        MODEL_BASE = '/opt/models/research'
+        MODEL_BASE = object_detection_api.value
         sys.path.append(MODEL_BASE)
         sys.path.append(MODEL_BASE + '/object_detection')
         sys.path.append(MODEL_BASE + '/slim')
 
-        PATH_TO_CKPT = '/opt/graph_def/frozen_inference_graph.pb'
-        PATH_TO_LABELS = MODEL_BASE + '/object_detection/data/mscoco_label_map.pbtxt'
+        PATH_TO_CKPT = model_path.value + '/frozen_inference_graph.pb'
+        PATH_TO_LABELS = model_path.value + '/label_map.pbtxt'
 
         # initialize the detection graph
-        from utils import label_map_util
+        import object_detection.utils.label_map_util as label_map_util
+        #from utils import label_map_util
         detection_graph.value = tf.Graph()
         with detection_graph.value.as_default():
             od_graph_def = tf.GraphDef()
@@ -56,7 +61,7 @@ def object_detection(t, detection_graph, sess, category_index, bridge, state, ta
         # create internal label and category mappings
         label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
         categories = label_map_util.convert_label_map_to_categories(label_map,
-                                                                    max_num_classes=90,
+                                                                    max_num_classes=4,
                                                                     use_display_name=True)
         category_index.value = label_map_util.create_category_index(categories)
 
@@ -65,14 +70,10 @@ def object_detection(t, detection_graph, sess, category_index, bridge, state, ta
         bridge.value = CvBridge()
 
         # initialized, start searching
-        state.value = 'searching'
+        sign.value = ''
 
     # no image received yet, do nothing
     if camera.value is None:
-        return
-
-    # only run object detection if state is searching
-    if state.value != 'searching':
         return
 
     # convert the ROS image to an OpenCV image and Numpy array
@@ -94,45 +95,38 @@ def object_detection(t, detection_graph, sess, category_index, bridge, state, ta
         np.squeeze, [boxes, scores, classes, num_detections])
 
     # annotate detections on the image
-    from PIL import Image, ImageDraw
     pil_image = Image.fromarray(cv_image)
     detections = []
+    closest_sign = {'name': '', 'square': -1}
+
     for i in range(num_detections):
 
         # only accept high enough detection scores
-        if scores[i] < 0.7: continue
+        if scores[i] < detection_threshold.value: continue
 
+        name = category_index.value[classes[i]]['name']
         # log the detection at timestamp
-        clientLogger.info(t, category_index.value[classes[i]]['name'], scores[i])
-        detections.append(category_index.value[classes[i]]['name'])
+        clientLogger.info(t, name, scores[i])
+        detections.append(name)
 
         # annotate the image with boxes
         draw = ImageDraw.Draw(pil_image)
         im_width, im_height = pil_image.size
         ymin, xmin, ymax, xmax = boxes[i]
+
         (left, right, top, bottom) = (xmin * im_width, xmax * im_width,
                                       ymin * im_height, ymax * im_height)
         draw.line([(left, top), (left, bottom), (right, bottom),
                    (right, top), (left, top)], width=int(scores[i]*10)-4, fill='red')
 
-        # if the object is our target goal, drive the husky towards its center
-        if target.value == category_index.value[classes[i]]['name']:
-            xmid = float(xmax - xmin) / 2.0
-            clientLogger.info(xmid)
-            left_eye.rate = 500 + (0 if xmid > 0.5 else 2000 * (0.5 - xmid))
-            right_eye.rate = 500 + (0 if xmid < 0.5 else 2000 * (xmid - 0.5))
-            clientLogger.info(left_eye.rate, right_eye.rate)
+        square = (xmax - xmin) * (ymax - ymin)
+        if closest_sign['square'] < square:
+            closest_sign['square'] = square
+            closest_sign['name'] = name
 
-    # if we have detected the input area, wait for input
-    if target.value is None and 'tv' in detections and 'chair' in detections:
-        state.value = 'waiting'
-        clientLogger.info('I see the tv! Waiting for user input.')
-
-    # for a valid target that's not detected, reset search mode
-    elif target.value is not None and target.value not in detections:
-        left_eye.rate = 0
-        right_eye.rate = 0
+    clientLogger.info("Closest sign:", closest_sign['name'])
+    sign.value = closest_sign['name']
 
     # publish a ROS image with annotations
-    import numpy
     return bridge.value.cv2_to_imgmsg(numpy.array(pil_image), "rgb8")
+
