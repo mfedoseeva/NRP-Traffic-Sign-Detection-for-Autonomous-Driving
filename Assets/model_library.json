@@ -1,0 +1,333 @@
+[
+    {
+        "title": "Shapes",
+        "thumbnail": "shapes.png",
+        "models": [
+            {
+                "modelPath": "box",
+                "modelTitle": "Box",
+                "thumbnail": "img/esv/objects/box.png"
+            },
+            {
+                "modelPath": "sphere",
+                "modelTitle": "Sphere",
+                "thumbnail": "img/esv/objects/sphere.png"
+            },
+            {
+                "modelPath": "cylinder",
+                "modelTitle": "Cylinder",
+                "thumbnail": "img/esv/objects/cylinder.png"
+            }
+        ]
+    },
+    {
+        "title": "Lights",
+        "thumbnail": "lights.png",
+        "models": [
+            {
+                "modelPath": "pointlight",
+                "modelTitle": "Point Light",
+                "thumbnail": "img/esv/objects/pointlight.png"
+            },
+            {
+                "modelPath": "spotlight",
+                "modelTitle": "Spot Light",
+                "thumbnail": "img/esv/objects/spotlight.png"
+            },
+            {
+                "modelPath": "directionallight",
+                "modelTitle": "Directional Light",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "road",
+                "modelTitle": "Road",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "limit20",
+                "modelTitle": "Limit 20",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "stop",
+                "modelTitle": "Stop",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            },
+            {
+                "modelPath": "limit100",
+                "modelTitle": "Limit 100",
+                "thumbnail": "img/esv/objects/directionallight.png"
+            }
+        ]
+    },
+    {
+        "title": "Construction",
+        "thumbnail": "construction.png",
+        "models": [
+            {
+                "modelPath": "concretewall1",
+                "modelTitle": "Concrete Wall"
+            },
+            {
+                "modelPath": "woodwall",
+                "modelTitle": "Wood Wall"
+            },
+            {
+                "modelPath": "whitepanelwall",
+                "modelTitle": "White Panel Wall"
+            },
+            {
+                "modelPath": "metallicwallangle",
+                "modelTitle": "Wall Metallic Angle"
+            },
+            {
+                "modelPath": "concretewallhigh",
+                "modelTitle": "High Concrete Wall"
+            },
+            {
+                "modelPath": "metallicwallanglehigh",
+                "modelTitle": "High Wall Metallic Angle"
+            },
+            {
+                "modelPath": "squarewindow",
+                "modelTitle": "Square Window"
+            },
+            {
+                "modelPath": "highwindow",
+                "modelTitle": "High Window",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "topwindow",
+                "modelTitle": "Top Window"
+            },
+            {
+                "modelPath": "bigtopwindow",
+                "modelTitle": "3x3 Top Window"
+            },
+            {
+                "modelPath": "topmetalbeam",
+                "modelTitle": "Top Metal Beam"
+            },
+            {
+                "modelPath": "glassdoor",
+                "modelTitle": "Glass Door",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "highpylon",
+                "modelTitle": "High Pylon"
+            },
+            {
+                "modelPath": "concretepylon",
+                "modelTitle": "Concrete Pylon"
+            },
+            {
+                "modelPath": "groundmetalgrid",
+                "modelTitle": "Ground Metal Grid"
+            },
+            {
+                "modelPath": "playground",
+                "modelTitle": "Robot Playground"
+            },
+            {
+                "modelPath": "ramp",
+                "modelTitle": "Ramps",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "stairs",
+                "modelTitle": "Stairs",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "concreteblock",
+                "modelTitle": "Concrete Block"
+            },
+            {
+                "modelPath": "bumpysoil",
+                "modelTitle": "Bumpy Soil",
+                "physicsIgnore": "opensim"
+            }
+        ]
+    },
+    {
+        "title": "Furniture",
+        "thumbnail": "roomObjects.png",
+        "models": [
+            {
+                "modelPath": "vr_lamp",
+                "modelTitle": "Stand Lamp"
+            },
+            {
+                "modelPath": "top_lamp",
+                "modelTitle": "Top Lamp"
+            },
+            {
+                "modelPath": "metal_library",
+                "modelTitle": "Library",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "hosta_potted_plant",
+                "modelTitle": "Hosta Plant"
+            },
+            {
+                "modelPath": "vr_screen",
+                "modelTitle": "Virtual Screen"
+            },
+            {
+                "modelPath": "screensupport",
+                "modelTitle": "Screen Support",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "bench",
+                "modelTitle": "Bench",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "sofa",
+                "modelTitle": "Sofa",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "woodtable",
+                "modelTitle": "Wood Table",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "officechair",
+                "modelTitle": "Office Chair",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "biologylabchair",
+                "modelTitle": "Biology Lab Chair",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "biologylabsink",
+                "modelTitle": "Biology Lab Sink",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "biologylabdesk",
+                "modelTitle": "Biology Lab Desk",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "computer",
+                "modelTitle": "Computer",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "viz_poster",
+                "modelTitle": "Poster 1"
+            },
+            {
+                "modelPath": "pingpongtable",
+                "modelTitle": "Ping Pong Table",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "pingpongtrainerbot",
+                "modelTitle": "Ping Pong Trainer Robot",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "carpetground",
+                "modelTitle": "Carpet"
+            },
+            {
+                "modelPath": "graycarpetground",
+                "modelTitle": "Small Gray Carpet"
+            },
+            {
+                "modelPath": "woodcheckerboard",
+                "modelTitle": "Wood Checkerboard"
+            },
+            {
+                "modelPath": "biologylabbottle",
+                "modelTitle": "Biology Lab Bottle",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "trashcan",
+                "modelTitle": "Trashcan",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "shelf",
+                "modelTitle": "Shelf",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "mouseymaze",
+                "modelTitle": "Mouse Y Maze",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "openglbook",
+                "modelTitle": "OpenGL Book",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "tatbook",
+                "modelTitle": "TAT Book",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "impcppbook",
+                "modelTitle": "C++ Book",
+                "physicsIgnore": "opensim"
+            }
+        ]
+    },
+    {
+        "title": "Street",
+        "thumbnail": "street.png",
+        "models": [
+            {
+                "modelPath": "future_lamp",
+                "modelTitle": "Future Lamp"
+            },
+            {
+                "modelPath": "large_concrete_ground",
+                "modelTitle": "Large Concrete Ground"
+            }
+        ]
+    },
+    {
+        "title": "Nature",
+        "thumbnail": "nature.png",
+        "models": [
+            {
+                "modelPath": "mars_ground_model",
+                "modelTitle": "Mars Ground",
+                "physicsIgnore": "opensim"
+            },
+            {
+                "modelPath": "grasshill",
+                "modelTitle": "Grass Hill",
+                "physicsIgnore": "opensim"
+            }
+        ]
+    },
+    {
+        "title": "NRP",
+        "thumbnail": "NRP.png",
+        "models": [
+            {
+                "modelPath": "viz_poster_2",
+                "modelTitle": "HBP/NRP Poster"
+            },
+            {
+                "modelPath": "nrp_panel",
+                "modelTitle": "HBP/NRP Panel",
+                "physicsIgnore": "opensim"
+            }
+        ]
+    }
+]

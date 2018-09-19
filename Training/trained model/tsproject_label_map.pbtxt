@@ -1,0 +1,15 @@
+item {
+  name: "limit100"
+  id: 1
+  display_name: "limit100"
+}
+item {
+  name: "limit20"
+  id: 2
+  display_name: "limit20"
+}
+item {
+  name: "stop_sign"
+  id: 3
+  display_name: "stop_sign"
+}
