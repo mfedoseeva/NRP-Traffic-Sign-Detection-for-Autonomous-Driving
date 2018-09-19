@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>SketchUp 18.0.16975</authoring_tool>
         </contributor>
-        <created>2018-08-12T10:11:23Z</created>
-        <modified>2018-08-12T10:11:23Z</modified>
+        <created>2018-08-12T10:08:35Z</created>
+        <modified>2018-08-12T10:08:35Z</modified>
         <unit meter="0.0254" name="inch" />
         <up_axis>Z_UP</up_axis>
     </asset>
@@ -27,13 +27,13 @@
         <visual_scene id="ID2">
             <node name="SketchUp">
                 <node name="skp_camera_Last_Saved_SketchUp_View">
-                    <matrix>0.08699923 0.2090937 -0.9740179 -149.7864 -0.9962084 0.01826023 -0.08506133 -12.48761 1.543904e-15 0.9777251 0.2098895 83.19393 0 0 0 1</matrix>
+                    <matrix>-0.8251526 -0.28655 0.4868391 341.5872 0.5649099 -0.4185578 0.7111161 617.077 2.775558e-17 0.8617996 0.5072489 329.7331 0 0 0 1</matrix>
                     <instance_camera url="#ID1" />
                 </node>
                 <node id="ID3" name="group_0">
-                    <matrix>0.8749682 -0.4841803 -1.378687e-05 4.4856 0.4841803 0.8749682 -1.119571e-05 -10.17133 1.748381e-05 3.120564e-06 1 -0.0001825493 0 0 0 1</matrix>
+                    <matrix>1 0 0 -11.07143 0 1 0 -4.440892e-16 0 0 1 -0.02476203 0 0 0 1</matrix>
                     <node id="ID4" name="group_1">
-                        <matrix>-4.005936e-16 1 -3.388132e-21 2.220446e-16 -1 -4.005936e-16 4.235165e-21 22.14286 4.235165e-21 3.388132e-21 1 66 0 0 0 1</matrix>
+                        <matrix>-1 -8.049117e-16 0 22.14286 8.049117e-16 -1 0 1 0 0 1 66 0 0 0 1</matrix>
                         <instance_geometry url="#ID5">
                             <bind_material>
                                 <technique_common>
@@ -48,7 +48,7 @@
                         </instance_geometry>
                     </node>
                     <node id="ID23" name="brown_post">
-                        <matrix>-4.005936e-16 1 -3.388132e-21 1.865175e-14 -1 -4.005936e-16 4.235165e-21 11.82143 4.235165e-21 3.388132e-21 1 5.421011e-20 0 0 0 1</matrix>
+                        <matrix>-1 -8.049117e-16 0 11.82143 8.049117e-16 -1 0 1 0 0 1 0 0 0 0 1</matrix>
                         <instance_node url="#ID24" />
                     </node>
                 </node>
@@ -59,7 +59,7 @@
         <geometry id="ID5">
             <mesh>
                 <source id="ID11">
-                    <float_array id="ID20" count="72">21.70352 3.064216e-14 0.4393398 1.5 2.087219e-14 0 20.64286 1.820766e-14 0 0.4393398 7.105427e-15 0.4393398 22.14286 1.332268e-14 1.5 1.24345e-14 1.065814e-14 1.5 22.14286 9.769963e-15 28.5 3.552714e-15 7.105427e-15 28.5 21.70352 2.309264e-14 29.56066 0.4393398 -8.881784e-16 29.56066 20.64286 1.509903e-14 30 1.5 1.065814e-14 30 1.5 1.065814e-14 30 20.64286 1.509903e-14 30 0.4393398 -8.881784e-16 29.56066 21.70352 2.309264e-14 29.56066 3.552714e-15 7.105427e-15 28.5 22.14286 9.769963e-15 28.5 1.24345e-14 1.065814e-14 1.5 22.14286 1.332268e-14 1.5 0.4393398 7.105427e-15 0.4393398 21.70352 3.064216e-14 0.4393398 1.5 2.087219e-14 0 20.64286 1.820766e-14 0</float_array>
+                    <float_array id="ID20" count="72">21.70352 2.842171e-14 0.4393398 1.5 2.131628e-14 0 20.64286 1.421085e-14 0 0.4393398 7.105427e-15 0.4393398 22.14286 1.421085e-14 1.5 8.881784e-15 1.421085e-14 1.5 22.14286 1.421085e-14 28.5 0 7.105427e-15 28.5 21.70352 2.131628e-14 29.56066 0.4393398 0 29.56066 20.64286 1.421085e-14 30 1.5 1.421085e-14 30 1.5 1.421085e-14 30 20.64286 1.421085e-14 30 0.4393398 0 29.56066 21.70352 2.131628e-14 29.56066 0 7.105427e-15 28.5 22.14286 1.421085e-14 28.5 8.881784e-15 1.421085e-14 1.5 22.14286 1.421085e-14 1.5 0.4393398 7.105427e-15 0.4393398 21.70352 2.842171e-14 0.4393398 1.5 2.131628e-14 0 20.64286 1.421085e-14 0</float_array>
                     <technique_common>
                         <accessor count="24" source="#ID20" stride="3">
                             <param name="X" type="float" />
@@ -79,7 +79,7 @@
                     </technique_common>
                 </source>
                 <source id="ID14">
-                    <float_array id="ID22" count="48">0.9801588 0.01464466 0.06774194 0 0.9322581 0 0.01984115 0.01464466 1 0.05 2.406677e-16 0.05 1 0.95 -1.604451e-16 0.95 0.9801588 0.9853553 0.01984115 0.9853553 0.9322581 1 0.06774194 1 0.8190476 0.75 0.1809524 0.75 0.854403 0.7426777 0.145597 0.7426777 0.8690476 0.725 0.1309524 0.725 0.8690476 0.275 0.1309524 0.275 0.854403 0.2573223 0.145597 0.2573223 0.8190476 0.25 0.1809524 0.25</float_array>
+                    <float_array id="ID22" count="48">0.9801588 0.01464466 0.06774194 -1.529685e-31 0.9322581 -2.89894e-32 0.01984115 0.01464466 1 0.05 -1.604451e-16 0.05 1 0.95 -5.61558e-16 0.95 0.9801588 0.9853553 0.01984115 0.9853553 0.9322581 1 0.06774194 1 0.8190476 0.75 0.1809524 0.75 0.854403 0.7426777 0.145597 0.7426777 0.8690476 0.725 0.1309524 0.725 0.8690476 0.275 0.1309524 0.275 0.854403 0.2573223 0.145597 0.2573223 0.8190476 0.25 0.1809524 0.25</float_array>
                     <technique_common>
                         <accessor count="24" source="#ID22" stride="2">
                             <param name="S" type="float" />
@@ -315,7 +315,7 @@
         </geometry>
     </library_geometries>
     <library_materials>
-        <material id="ID6" name="speed_limit_100">
+        <material id="ID6" name="speed_limit_20">
             <instance_effect url="#ID7" />
         </material>
         <material id="ID15" name="stop_sign_-_back_-_brown">
@@ -422,16 +422,16 @@
     </library_effects>
     <library_images>
         <image id="ID8">
-            <init_from>limit100/limit100.jpg</init_from>
+            <init_from>limit20/limit20.png</init_from>
         </image>
         <image id="ID17">
-            <init_from>limit100/stop_sign_-_back_-_brown.png</init_from>
+            <init_from>limit20/stop_sign_-_back_-_brown.png</init_from>
         </image>
         <image id="ID30">
-            <init_from>limit100/Sign_Post_-_Brown_-_trans.png</init_from>
+            <init_from>limit20/Sign_Post_-_Brown_-_trans.png</init_from>
         </image>
         <image id="ID47">
-            <init_from>limit100/material_6.jpg</init_from>
+            <init_from>limit20/material_6.jpg</init_from>
         </image>
     </library_images>
     <library_nodes>
