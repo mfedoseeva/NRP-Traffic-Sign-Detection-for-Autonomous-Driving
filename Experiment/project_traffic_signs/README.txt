@@ -25,15 +25,6 @@ cd models/research
 protoc object_detection/protos/*.proto --python_out=.
 
 
-=== Install Pre-trained Object Detection Models ===
-
-ONLY Perform the section linked, "Download the pretrained model binaries"
-
-If you are unable to write to /opt, pick a different path and note it for below.
-
-https://github.com/GoogleCloudPlatform/tensorflow-object-detection-example#download-the-pretrained-model-binaries
-
-
 === Ensure the Models Are Accessible By Your User ===
 
 If you installed into /opt, you'll need to ensure your platform user can access/read the files.
