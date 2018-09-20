@@ -13,11 +13,11 @@
 	<configuration type="user-interaction-settings" src="TensorFlowTutorial.uis"/>
     <maturity>production</maturity>
     <environmentModel src="street.sdf">
-        <robotPose x="0.0" y="0.0" z="0.5" roll="0.0" pitch="-0.0" yaw="3.14159265359"/>
+        <robotPose x="1.7" y="15" z="0.1" roll="0.0" pitch="-0.0" yaw="4.712389"/>
     </environmentModel>
     <bibiConf src="TensorFlowTutorial.bibi"/>
     <cameraPose>
-        <cameraPosition x="3.25" y="4.75" z="4.25"/>
+        <cameraPosition x="3.25" y="25" z="4.25"/>
         <cameraLookAt x="0" y="0" z="0.5"/>
     </cameraPose>
 </ExD>
