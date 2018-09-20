@@ -6,7 +6,7 @@
 @nrp.MapVariable("tensorflow_venv", initial_value="/home/bbpnrsoa/.opt/tensorflow_venv")
 @nrp.MapVariable("object_detection_api", initial_value="/home/bbpnrsoa/.opt/models/research")
 @nrp.MapVariable("model_path", initial_value="/home/bbpnrsoa/.opt/graph_def")
-@nrp.MapVariable("detection_threshold", initial_value=0.9)
+@nrp.MapVariable("detection_threshold", initial_value=0.8)
 @nrp.MapVariable("detection_graph", initial_value=None)
 @nrp.MapVariable("sess", initial_value=None)
 @nrp.MapVariable("category_index", initial_value=None)
