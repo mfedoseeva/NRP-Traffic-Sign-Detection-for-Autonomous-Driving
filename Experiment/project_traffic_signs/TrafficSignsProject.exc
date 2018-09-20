@@ -3,7 +3,7 @@
      xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig"
      xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
     <name>Project - Traffic sign detection</name>
-    <thumbnail>TensorFlowTutorial.jpg</thumbnail>
+    <thumbnail>TrafficSignsProject.jpg</thumbnail>
     <description>This experiment is a semester project for Cognitive Systems lecture Summer Semester 2018 at TUM.
     </description>
     <tags>traffic detection husky</tags>
@@ -13,7 +13,7 @@
 	<configuration type="user-interaction-settings" src="TrafficSignsProject.uis"/>
     <maturity>production</maturity>
     <environmentModel src="street.sdf">
-        <robotPose x="1.7" y="15" z="0.1" roll="0.0" pitch="-0.0" yaw="4.712389"/>
+        <robotPose x="1.7" y="15" z="0.183" roll="0.0" pitch="-0.0" yaw="4.712389"/>
     </environmentModel>
     <bibiConf src="TrafficSignsProject.bibi"/>
     <cameraPose>
