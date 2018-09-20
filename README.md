@@ -10,10 +10,10 @@ recognized automatically (e.g. letting the car adjust its speed)
 * [Tensorflow Object detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
 
 ## Milestones
-- [ ] Asset preparation and import to NRP (traffic signs, road)
-- [ ] Environment setup in NRP (street, car, signs)
+- [x] Asset preparation and import to NRP (traffic signs, road)
+- [x] Environment setup in NRP (street, car, signs)
 - [ ] Car logic, reaction to signs
-- [ ] Dataset preparation and CNN training
-- [ ] Model integration, inference interface and image processing
+- [x] Dataset preparation and CNN training
+- [x] Model integration, inference interface and image processing
 
 ![Project Image](description/nrp.png)
