@@ -34,10 +34,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name="default">
-      <sim_time>5 250000000</sim_time>
+      <sim_time>5 251000000</sim_time>
       <real_time>0 0</real_time>
-      <wall_time>1537392642 820063549</wall_time>
-      <iterations>5250</iterations>
+      <wall_time>1537463302 93895425</wall_time>
+      <iterations>1</iterations>
       <model name="large_concrete_ground_0">
         <pose frame="">0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -69,20 +69,20 @@
         </link>
       </model>
       <model name="limit100_0">
-        <pose frame="">3.914 8 0.009 0 0 -1.91986</pose>
+        <pose frame="">3.914 6 0.009 0 0 -1.91986</pose>
         <scale>1 1 1</scale>
         <link name="limit100::body">
-          <pose frame="">3.914 8 0.009 0 0 -1.91986</pose>
+          <pose frame="">3.914 6 0.009 0 0 -1.91986</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name="limit20_0">
-        <pose frame="">4.015 0 0.008 0 -0 0</pose>
+        <pose frame="">4.015 -3 0.008 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name="limit20::body">
-          <pose frame="">4.015 0 0.008 0 -0 0</pose>
+          <pose frame="">4.015 -3 0.008 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -109,30 +109,30 @@
         </link>
       </model>
       <model name="road_1">
-        <pose frame="">0 22 0.016 0 -0 1.5708</pose>
+        <pose frame="">0 23 0.001 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name="road::body">
-          <pose frame="">0 22 0.016 0 -0 1.5708</pose>
+          <pose frame="">0 23 0.001 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name="road_2">
-        <pose frame="">0 -22 0.01 0 -0 1.5708</pose>
+        <pose frame="">0 -22 0.001 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name="road::body">
-          <pose frame="">0 -22 0.01 0 -0 1.5708</pose>
+          <pose frame="">0 -22 0.001 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name="stop_0">
-        <pose frame="">3.986 -8 0.008 0 -0 0</pose>
+        <pose frame="">3.986 -13 0.008 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name="stop::body">
-          <pose frame="">3.986 -8 0.008 0 -0 0</pose>
+          <pose frame="">3.986 -13 0.008 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -584,5 +584,5 @@
         <gravity>1</gravity>
       </link>
     </model>
-  </world>
+    </world>
 </sdf>
