@@ -8,14 +8,14 @@
     </description>
     <tags>traffic detection husky</tags>
     <timeout>86400</timeout>
-    <configuration type="3d-settings" src="TensorFlowTutorial.ini"/>
+    <configuration type="3d-settings" src="TrafficSignsProject.ini"/>
     <configuration type="brainvisualizer" src="brainvisualizer.json"/>
-	<configuration type="user-interaction-settings" src="TensorFlowTutorial.uis"/>
+	<configuration type="user-interaction-settings" src="TrafficSignsProject.uis"/>
     <maturity>production</maturity>
     <environmentModel src="street.sdf">
         <robotPose x="1.7" y="15" z="0.1" roll="0.0" pitch="-0.0" yaw="4.712389"/>
     </environmentModel>
-    <bibiConf src="TensorFlowTutorial.bibi"/>
+    <bibiConf src="TrafficSignsProject.bibi"/>
     <cameraPose>
         <cameraPosition x="3.25" y="25" z="4.25"/>
         <cameraLookAt x="0" y="0" z="0.5"/>
