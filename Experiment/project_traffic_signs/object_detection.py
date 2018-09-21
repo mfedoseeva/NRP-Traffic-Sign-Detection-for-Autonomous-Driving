@@ -6,12 +6,12 @@
 @nrp.MapVariable("tensorflow_venv", initial_value="/home/bbpnrsoa/.opt/tensorflow_venv")
 @nrp.MapVariable("object_detection_api", initial_value="/home/bbpnrsoa/.opt/models/research")
 @nrp.MapVariable("model_path", initial_value="/home/bbpnrsoa/.opt/graph_def")
-@nrp.MapVariable("detection_threshold", initial_value=0.8)
+@nrp.MapVariable("detection_threshold", initial_value=0.7)
 @nrp.MapVariable("detection_graph", initial_value=None)
 @nrp.MapVariable("sess", initial_value=None)
 @nrp.MapVariable("category_index", initial_value=None)
 @nrp.MapVariable("bridge", initial_value=None)
-@nrp.MapVariable("sign", initial_value=None, scope=nrp.GLOBAL)
+@nrp.MapVariable("sign", initial_value="", scope=nrp.GLOBAL)
 # input generators to drive the Braitenberg brain
 # @nrp.MapSpikeSource("left_eye", nrp.brain.sensors[slice(0, 3, 2)], nrp.poisson)
 # @nrp.MapSpikeSource("right_eye", nrp.brain.sensors[slice(1, 4, 2)], nrp.poisson)
@@ -97,7 +97,7 @@ def object_detection(t, tensorflow_venv, object_detection_api, model_path, detec
     # annotate detections on the image
     pil_image = Image.fromarray(cv_image)
     detections = []
-    closest_sign = {'name': '', 'square': -1}
+    closest_sign = {'name': sign.value, 'square': -1}
 
     for i in range(num_detections):
 
@@ -124,7 +124,7 @@ def object_detection(t, tensorflow_venv, object_detection_api, model_path, detec
             closest_sign['square'] = square
             closest_sign['name'] = name
 
-    clientLogger.info("Closest sign:", closest_sign['name'])
+    clientLogger.info("Current sign:", closest_sign['name'])
     sign.value = closest_sign['name']
 
     # publish a ROS image with annotations
