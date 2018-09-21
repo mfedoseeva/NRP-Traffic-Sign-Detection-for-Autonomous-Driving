@@ -2,35 +2,55 @@
 \section{Cognitive Functions and Models involved}
 
 \subsection{Cognitive Functions}
-list of cognitive functions mentioned in the exercise:
+Several cognitive functions are implemented in our virtual car. 
+The following subsections describe those cognitive functions and their role in the NRP car in more detail.
 
-perception and attention
-percetpion: camera
-attention: does the neural network do something like that?
+\subsubsection{Perception and Attention}
+The car can sense its environment visually through the camera, and process that visual information in the tensorflow neural network.
 
-memory and knowledge
-information stored in neural network weight: knowledge about the world: how do certain signs look like, how to distinguish them from each other and from background
-information stored in programmed behaviour: programmed reactions to sign detection, how to control the motors, etc
+Therefore the perception of the car is comprised of the early exteroceptive perception in the camera (modality: visual), as well as the ``higher level'' processing implemented by the neural network, which extracts meaningful information about the traffic signs, and ignores irrelevant information about, for example, the background. 
 
-learning and development
-learning: in neural network training (although not closed loop in current setup)
-delelopment: no, ``body'' stays the same
+This perception process makes use of \emph{attention} on multiple layers:
+\begin{itemize}
+ \item in the convolutional neural network layers, the learned filters detect relevant features of the raw input image, while less important details are mostly ignored.
+ % TODO some other attention bits in the architecture?
+ \item the output of the neural network is further filtered: the car selects the sign that has the largest bounding box and ignores the other detected signs. This allows it to focus on the sign that is closest ahead, and not react to other signs that are still further ahead and therefore not relevant yet. 
+\end{itemize}
+The above forms of attention can be classified as \emph{selective} attention, because they allow the car to filter for the information that is relevant for its task.
 
-autonomy
-very limited: can react to signs on road and drive safely on such a road without supervision, but can't adapt do other environments
+\subsubsection{Memory and Knowledge}
 
-social cognititon
-no
+The NRP car model has both short-term and long-term memory, which allows it to store knowledge.
 
-conciousness
-unlikely
+Short term memory is used as the working memory that supports the perception-action loop: it stores the camera image until it is processed by the neural network, as well as the neuron activations during neural network inference, and the variables in the python code that post-processes the neural-network output and controls the motors.
 
-\subsection{Cognition Model (Cognitivist or Emergent)}
-visual traffic sign detection: emergent, neural networks...
-motor control: cognitivist: rule based
+Long term memory is implemented by the neural network weights, which can store information during training (although training is currently not done closed-loop, but open-loop). That information is stored in the saved model file, and can be retrieved during operation of the car, when the stored model is loaded and used for inference on the camera images.
+This long term Memory stores knowledge about our NRP world, and about how traffic signs look, and how they differ from roads and background, and from each other.
+
+Further knowledge is stored (in code) for the programmed aspects of the robot behaviour, like the required motor control signals and voltages that  result in velocities that are appropriate for each traffic sign.
 
 
-\cite{abbrev}
+\subsubsection{Learning and Development}
+For our model car, learning happens in open-loop mode, when the neural network is trained. This is a form of supervised learning, and implemented by the code that feeds the training inputs and training targets to the neural network, and by the optimizer that updates the neural network weights in each training step.
+
+Development is \emph{not} implemented, as the car body, including sensors and actuators, does not evolve, but is fixed.
+
+\subsubsection{Autonomy}
+The virtual NRP car has only a rather limited form of autonomy: In a virtual world like ours, it can safely drive down a road and comply with traffic regulations. It can safely handle changes in the order, orientation and exact size of the traffic signs (behavioural autonomy). However it cannot handle environments that differ more, like have roads with curves, because lane following along road turns is not implemented.
+
+\subsubsection{Social Cognition}
+No social cognition is implemented in the NRP car, as the virtual world it operates in is single-actor.
+
+\subsubsection{Conciousness}
+We do not believe that consciousness has emerged in the NRP car. 
+
+\subsection{Cognition Model}
+The NRP car implements a combination of both cognitivist and emergent principles:
+
+The image recognition in the neural network follows the emergent paradigm, since only the architecture of the network is specified, and the image recognition capabilities emerge during training.
+
+Other aspects of the car, however, fit better into the cognitivist paradigm: The reactions to the detected traffic sign are encoded in rules, which provide a mapping of sign types to target speeds, and define how to control the motors. (These aspects of the behaviour are implemented in the python code, as opposed to implicitly given by the neural network weights)
+
 
 
 
