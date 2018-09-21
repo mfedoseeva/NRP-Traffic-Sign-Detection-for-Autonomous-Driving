@@ -16,7 +16,7 @@ def velo_control(t, sign):
         angular=geometry_msgs.msg.Vector3(x=0.0, y=0.0, z=0.0))
 	elif sign.value == 'stop_sign':
 		return geometry_msgs.msg.Twist(
-        linear=geometry_msgs.msg.Vector3(x=0.0*coeff, y=0.0, z=0.0),
+        linear=geometry_msgs.msg.Vector3(x=0.0, y=0.0, z=0.0),
         angular=geometry_msgs.msg.Vector3(x=0.0, y=0.0, z=0.0))
 	else:
 		return geometry_msgs.msg.Twist(
