@@ -201,10 +201,12 @@
             </contact>
             <bounce/>
             <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
+              <ode>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
             </friction>
           </surface>
         </collision>
@@ -246,10 +248,12 @@
             </contact>
             <bounce/>
             <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
+              <ode>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
             </friction>
           </surface>
         </collision>
@@ -470,10 +474,12 @@
             </contact>
             <bounce/>
             <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
+              <ode>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
             </friction>
           </surface>
         </collision>

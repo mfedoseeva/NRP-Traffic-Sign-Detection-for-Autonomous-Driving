@@ -6,6 +6,10 @@ docker cp /local/path nrp:/home/bbpnrsoa/nrp/src/Experiments
 ``` 
 docker cp /local/path nrp:/home/bbpnrsoa/nrp/src/Models
 ```
+* copy the entire folder "husky_model" from "Assets" to nrp container Models
+``` 
+docker cp /local/path nrp:/home/bbpnrsoa/nrp/src/Models
+```
 * copy "model_library.json" from "Assets" to nrp container Models/libraries
 ``` 
 docker cp /local/path/model_library.json nrp:/home/bbpnrsoa/nrp/src/Models/libraries
