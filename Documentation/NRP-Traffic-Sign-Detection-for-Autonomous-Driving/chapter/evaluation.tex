@@ -1,43 +1,104 @@
 
 \section{Experiments and Evaluation}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet \cite{abbrev}.   
+The objective of this project was to build an experimental implementation of traffic sign detection for a car inside the NRP. 
+A street environment and car should be modeled in the Neurorobotics Platform. A traffic sign detection Model should be implemented in tensorflow, and the videofeed from the car's camera be processed by that model to detect traffic signs.
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+As a potential future step, we envisaged that the perception - cognition - action loop could be closed, and the sign detections could be fed back in real-time to the car's motor contorller and make it react to the traffic signs as it drives along the road.
 
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+In the following paragraphs, we evaluate the results of this experiment, if the project objectives could be met, if the envisaged implementation worked in practice, and also evaluate the performance caracteristics of the detection model, the core of the car's ``brain''.
 
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+\subsection{Feasability of Traffic Sign Detection in a simulated car in NRP}
+The implementation that we present demonstrates that traffic sign detection in NRP is feasable. 
+The car can drive down the road and detects the traffic signs on the roadside in real-time, without getting distracted by other objects in the scene. 
+The car can also focus on the traffic sign that is immediately in front of it (and currently relevant), while not getting mislead by signs that are further down the road. 
+Additionally, it remembers the most recent sign it passed, afer it is out of sight, and therefore know the corresponding speed limit, until it is orverriden by the next sing on the road.
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+\subsection{A Closed Perception - Cognition - Action Loop}
+In addition to pure detetction, our implementation demonstrates a closed perception - cognition - action loop: 
+the car reacts to the traffic signs in real-time, influencing its own future perception and therefore closing the loop. 
+It drives at medium speed initially, accelerates to high speed as it passes the ``100'' speed limit, decelerates to low speed as it passes the ``20'' limit sign, and observes the ``stop'' sign by coming to a halt. 
+While the sequence of the signs is fixed in our particular experiment (for greater simplicity of the NRP modeling), the car's can in principle react to any such sequence of signs appropriately.
 
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+\subsection{Detection Performance}
+Apart from the overall Experiment, we also specifically evaluate the performance of the traffic sign detection model.
 
-\subsection{Section}
+The detection model is based on deep learning. 
+As deep learning is generally susceptible to overfitting due to high model complexities, it is important to consider the separation of the training and test data sets. 
+Training was done on generated images consisting of background sceneries and images of trafifc signs that were pasted into those backgrounds. 
+This method provides a large number of different training samples, however they all share certain caracteristis such as ligting conditions. 
+Therefore we believe that evaluating on such a generated dataset (even if the individual samples are all distinct from those in the training set) is not ideal, as it might not detect generalization problems.
+Since the actual objective of the model is to detect traffic signs in NRP, we chose to evaluate the model directly on the real NRP data, which is most relevant for the task and more independent from the training dataset.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
-
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-
+We performed multiple test runs of the NRP experiment, and checked the correctness of the detections. In order test the robustness of the system, we slightly changed the run parameters for each test run, altering the car's starting position, orientation and speed. Table \ref{tab:eval_runs} shows the parameter modifications and results for the test runs.
 
 \begin{table}[htpb]
-	\caption[Example table]{An example for a simple table.}\label{tab:sampleB}
+	\caption[Test Runs]{Test runs of the NRP detection car and detection system: the results show that the detection itself is very reliable, errors occur is the car starts or dirves farer to the side, which has the effect that the traffic signs leave the camera's field of view before they are close enought to be considered relevant. A change of software configuration could in principle alleviate this problem, if desired.} % TODO is there a way to have the description not in caps lock?
+	\label{tab:eval_runs}
 	\centering
-	\begin{tabular}{l l l l}
-		A & B & C & D \\
-		\cline{1-4}	
-		1 & 2 & 1 & 2 \\
-		2 & 3 & 2 & 3 \\
+	\begin{tabular}{l l l l l l}
+		run \# & configuration & 100 detected & 20 detected & stop detected & note \\
+		\cline{1-6}	
+		1 & x = 1.7 (default)     & \checkmark & \checkmark & \checkmark & - \\
+		2 & (default)             & \checkmark & \checkmark & \checkmark & - \\
+		3 & speed * 5/6           & \checkmark & \checkmark & \checkmark & - \\
+		4 & x = 2, + 0.5 \degree  & \checkmark & \checkmark & \checkmark & - \\
+		5 & x = 1                 & no         & no         & \checkmark & to far to side, sign left field of view when approached\\
+		6 & 6m back               & \checkmark & \checkmark & \checkmark & - \\
+		7 & -1 \degree            & \checkmark & \checkmark & \checkmark & - \\
+		8 & 13m back              & \checkmark & \checkmark & \checkmark & - \\
+		9 & +1 \degree            & \checkmark & \checkmark & no         & stop sign missed because car drove to far to the side \\
+        10& x = 1.8               & \checkmark & \checkmark & \checkmark & - \\
+		\cline{1-6}
+		total&                    & 90 \% success & 90 \% success & 90 \% success & percentatges depend on start configuration distribution \\ 
 	\end{tabular}
 \end{table}
 
+
+% run 1 2: all correct
+% run 3 (speed 5) all good
+% run 4: translate 2, rotate .5
+% run 5: translate 1: stop detected, others not
+% run 6: translate x 18: all correct
+% run 7: rotate 89: all correct
+% run 8: translate 25: all correct
+% run 9: rot 91: stop missed because to far off
+% run 10: translate 1.8, all good
+
+\subsection{Inference Speed}
+Since deep learning methods tend to require high computational power and real-time simulations in the NRP are desired, inference speed is an important criterion. 
+We measured the total time spend in the object detection code per time step. 
+In production systems, neural networks inference can be greatly accellerated when performed on GPUs or specialised neural network inference hardware, for simplicity of the NRP setup, and due to hardware availability, however, our performance benchmark was done on a general purpose CPU. 
+Higher speeds are therefore possible in principle, with apprpriate hardware. 
+Table \ref{tab:inference_time} shows the results of measurements on a 2.6 GHz Intel Core i7-6600U CPU euqipped laptop.
+In the current configuration, this results in an overal realtime-factor of 2.1 for the complete simulation (including physics simulation, scene rendering, car control and object detection).
+
+\begin{table}[htpb]
+    \caption[Computational Cost]{Per-Step Computation time of object detection}
+    \label{tab:inference_time}
+    \centering
+    \begin{tabular}{l l}
+    step &  time [s] \\
+    \cline{1-2}
+	0	& 0.14 \\
+	1	& 0.144 \\
+	2	& 0.107 \\
+	3	& 0.126 \\
+	4	& 0.156 \\
+	5	& 0.134 \\
+	6	& 0.211 \\
+	7	& 0.158 \\
+	8	& 0.183 \\
+	9	& 0.205 \\
+	10	& 0.217 \\
+	11	& 0.155 \\
+	12	& 0.167 \\
+    \cline{1-2}
+    avg & 0.162 \\
+    \cline{1-2}
+    \end{tabular}
+\end{table}
+
+% detection time: 0.140213012695 0.144273996353 0.107033014297 0.126423835754 0.156125068665 0.133794784546 0.210783958435 0.158228874207 0.183055877686 0.205268859863 0.217168092728 0.154560089111 0.167140960693
 
 
