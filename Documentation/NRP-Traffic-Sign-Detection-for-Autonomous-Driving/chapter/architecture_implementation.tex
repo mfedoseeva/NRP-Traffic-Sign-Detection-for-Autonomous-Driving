@@ -37,7 +37,7 @@ Currently no urban road models are available in the NRP model library. To make a
 The road model consists of four files: model.config, model.sdf, road.dae, road.png. Since NRP is partly based on Gazebo, the model structure is quite similar to the gazebo model. A gazebo model has three levels: 3D object, model, world. NRP model is quite similar to this structure. 
 
 
-The road model starts from a 3D object, which is defined in "road.dae". Important information such as geometry and texture of the road is defined in this file. The image road.png is referenced in road.dae as texture of road surface. The geometry section has three main sources: mesh position, mesh normals, mesh map. To build our road model based on the large concrete ground, we have adjusted some values in these sources. For example, the large concrete ground has 9 sections, while we only need 3 sections to make a road. So mesh positions need to be changed. As for the texture, the dae file has a complex structure. The image is imported as library_images in road.dae. It is then used in library_effects. In the next step, it makes library_materials. Finally materials is apply to the model. 
+The road model starts from a 3D object, which is defined in "road.dae". Important information such as geometry and texture of the road is defined in this file. The image road.png is referenced in road.dae as texture of road surface. The geometry section has three main sources: mesh position, mesh normals, mesh map. To build our road model based on the large concrete ground, we have adjusted some values in these sources. For example, the large concrete ground has 9 sections, while we only need 3 sections to make a road. So mesh positions need to be changed. As for the texture, the dae file has a complex structure. The image is imported as library\_images in road.dae. It is then used in library\_effects. In the next step, it makes library\_materials. Finally materials is apply to the model. 
 
 
 "model.sdf" is the bridge between a 3D model and a gazebo model. This file imports the 3D model "road.dae", defines its initial position, collision and visual property. The road model is now a complete module and can be used in NRP platform. This is the level of Gazebo model. A street environment corresponds to world level in Gazebo, which will be explained in the next section.
@@ -69,18 +69,6 @@ Secondly, import the robot model in TrafficSignsProject.bibi in the experiment d
 
 
 Finally, define the initial position of the robot in TrafficSignsProbject.exc. The car should be placed above the road and fall down to the road. Otherwise, it has the risk of being stuck in the road.
-
-
-\begin{table}[htpb]
-	\caption[Example table]{An example for a simple table.}\label{tab:sampleA}
-	\centering
-	\begin{tabular}{l l l l}
-		A & B & C & D \\
-		\cline{1-4}	
-		1 & 2 & 1 & 2 \\
-		2 & 3 & 2 & 3 \\
-	\end{tabular}
-\end{table}
 
 
 
