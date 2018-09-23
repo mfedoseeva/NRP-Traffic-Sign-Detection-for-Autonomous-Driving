@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>husky_model</name>
+  <name>traffic_husky_model</name>
   <version>0.0.3</version>
   <description>SDF description for HBP Husky</description>
 
