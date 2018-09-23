@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig"
+     xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
+    <name>Project - Traffic sign detection</name>
+    <thumbnail>TrafficSignsProject.jpg</thumbnail>
+    <description>This experiment is a semester project for Cognitive Systems lecture Summer Semester 2018 at TUM.
+    </description>
+    <tags>traffic detection husky</tags>
+    <timeout>86400</timeout>
+    <configuration type="3d-settings" src="TrafficSignsProject.ini"/>
+    <configuration type="brainvisualizer" src="brainvisualizer.json"/>
+	<configuration type="user-interaction-settings" src="TrafficSignsProject.uis"/>
+    <maturity>production</maturity>
+    <environmentModel src="street.sdf">
+    <robotPose x="1.7" y="12" z="0.183" roll="0.0" pitch="-0.0" yaw="4.712389"/>
+    </environmentModel>
+    <bibiConf src="TrafficSignsProject.bibi"/>
+    <cameraPose>
+        <cameraPosition x="3.25" y="25" z="4.25"/>
+        <cameraLookAt x="0" y="0" z="0.5"/>
+    </cameraPose>
+</ExD>

@@ -5,7 +5,7 @@
 
 In this project we developed and implemented a demonstration of closed-loop traffic sign detection for the control of a virtual car on the Neurorobotics Platform. 
 
-A road scene was modeled and equipped with traffic signs of different speed limits and a stop sign, and a virtual car was set up to drive down the road. The speed of the car was controlled via the (virtual) voltage that is supplied to the motor, and adapted in accordance with the detected traffic signs.
+A road scene was modeled and equipped with traffic signs of different speed limits and a stop sign, and a virtual car was set up to drive down the road. The speed of the car was controlled by the transfer function and adapted in accordance with the detected traffic signs.
 
 Images from a virtual camera on the car were passed to a neural network model through NRP transfer functions, processed by a transfer-learned tensorflow neural network model, and the detection results were passed back to the motor control of the car.
 
