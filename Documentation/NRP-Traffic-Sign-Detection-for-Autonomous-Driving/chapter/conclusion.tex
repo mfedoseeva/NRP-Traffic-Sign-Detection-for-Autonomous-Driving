@@ -12,7 +12,11 @@ Images from a virtual camera on the car were passed to a neural network model th
 Both correctness and speed of the neural network inference were evaluated in the NRP environment. The evaluation shows that the inference works robustly and is able to successfully detect the traffic sings.
 
 \subsection{Discussion}
-%TODO
+As we describe in the evaluation seciton, the performance of the detection model was measured directly on experiment runs in our NRP scene, with some variety of starting configurations and driving speeds. Other evaluation setups are possible, like an external evaluation on some test dataset, or an evalation within NRP, but with a different distribution of experiment configurations.
+
+With other evaluation setups, results would not be identical: Evaluating on an external dataset could result in different performance, if the model genralises better or worse from it's training data to this test set, than it generalizes from the training data to the NRP world data.
+
+While an evaluation on a larger dataset could show the detection behaviour for a wider set of situations, this approach has the disadvantage that no such suitable datasets are available that use NRP-world data and the required set of traffic signs. Since the principle objective for this project is to implement traffic sign detetcion in NRP, we decided that an evaluation on a test set of NRP data was to be preffered, due to its better similarity to the relevant task.
 
 \subsection{Limitations}
 The scope of this project was to implement a demonstration scenario. 
