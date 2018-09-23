@@ -5,23 +5,24 @@
 
 In this project we developed and implemented a demonstration of closed-loop traffic sign detection for the control of a virtual car on the Neurorobotics Platform. 
 
-A road scene was modeled and equipped with traffic signs of different speed limits and a stop sign, and a virtual car was set up to drive down the road. The Speed of the car was controlled via the (virtual) voltage that is supplied to the motors, and adapted in accordance with the detected traffic signs.
+A road scene was modeled and equipped with traffic signs of different speed limits and a stop sign, and a virtual car was set up to drive down the road. The speed of the car was controlled via the (virtual) voltage that is supplied to the motor, and adapted in accordance with the detected traffic signs.
 
 Images from a virtual camera on the car were passed to a neural network model through NRP transfer functions, processed by a transfer-learned tensorflow neural network model, and the detection results were passed back to the motor control of the car.
 
 Both correctness and speed of the neural network inference were evaluated in the NRP environment. The evaluation shows that the inference works robustly and is able to successfully detect the traffic sings.
 
 \subsection{Discussion}
-As we describe in the evaluation seciton, the performance of the detection model was measured directly on experiment runs in our NRP scene, with some variety of starting configurations and driving speeds. Other evaluation setups are possible, like an external evaluation on some test dataset, or an evalation within NRP, but with a different distribution of experiment configurations.
+As we describe in the evaluation section, the performance of the detection model was measured on real experiment runs in our NRP scene, with some variety of starting configurations and driving speeds. Other evaluation setups are possible, like an external evaluation on some test dataset, or an evaluation within NRP, but with a different distribution of experiment configurations.
 
 With other evaluation setups, results would not be identical: Evaluating on an external dataset could result in different performance, if the model genralises better or worse from it's training data to this test set, than it generalizes from the training data to the NRP world data.
 
-While an evaluation on a larger dataset could show the detection behaviour for a wider set of situations, this approach has the disadvantage that no such suitable datasets are available that use NRP-world data and the required set of traffic signs. Since the principle objective for this project is to implement traffic sign detetcion in NRP, we decided that an evaluation on a test set of NRP data was to be preffered, due to its better similarity to the relevant task.
+While an evaluation on a larger dataset could show the detection behavior for a wider set of situations, this approach has the disadvantage that no such suitable datasets are available that use NRP-world data and the required set of traffic signs. Since the principle objective for this project is to implement traffic sign detection in NRP, we decided that an evaluation on a test set of NRP data was to be preferred, due to its better similarity to the relevant task.
+
 
 \subsection{Limitations}
 The scope of this project was to implement a demonstration scenario. 
-The road scene is therefore relatively simple, and only a small subset of real-world traffis signs occur and need to be detected. 
-Examples of elements that do not occur in our scenario, but do exist in real-world traffic are, among others:
+The road scene is therefore relatively simple, and only a small subset of real-world traffic signs occur and need to be detected. 
+Examples of elements that do not occur in our scenario, but do exist in real-world traffic, are, among others:
 \begin{itemize}
  \item other speed-related sings than 100km/h, 20km/h and stop
  \item traffic signs that are not speed related, such as informational signs, warnings, parking sings, etc
@@ -35,13 +36,13 @@ Examples of elements that do not occur in our scenario, but do exist in real-wor
 
 Extending the scenario to include other traffic signs would be rather straight-forward and is very likely feasible, as long as pre-programmed reactions to the detection events are appropriate. 
 Other limitations, such as reactions to other traffic participants, are, however, much more difficult to overcome.
-Therefore, and in accordance with the scope of the project, this project is to be understood as an example and demonstration of some capabilities of the neurorobotics platform in combination with deep learning methods, as opposed to a demonstration of advanced autonomous driving.
+Therefore, and in accordance with the scope of the project, this project is to be understood as an example and demonstration of some capabilities of the Neurorobotics Platform in combination with deep learning methods, as opposed to a demonstration of advanced autonomous driving.
 
 \subsection{Outlook}
 There are several potential improvements which could be added to our current implementation in future work. 
-Creating bigger, and more diverse NRP scenes would allow to test-run the Experiment in a wider set of conditions.
-Implementing lane detection and following would be the basis for running the car in a more natural road scene that includes curves, multiple roads, and intersections. 
+Creating bigger, and more diverse NRP scenes would allow to test-run the experiment in a wider set of conditions.
+Implementing lane detection and -following would be the basis for running the car in a more natural road scene that includes curves, multiple roads, and intersections. 
 
-A larger-scale extension would be to enable closed-loop training, so that the car can improve it's detection capabilities and driving scills while driving, and potentially use learned control through reinforcement learning.
+A larger-scale extension would be to enable closed-loop training, so that the car can improve it's detection capabilities and driving skills \emph{while driving}, and potentially use learned control through reinforcement learning.
 
-Some improvements on the usability side would be a streamlined deployment mechanism, that allows to easily and automatically install and update the experiment in an NRP installation. Also, support for external (cloud) GPUs might be helpful to enable fluent simulations independent of the locally available hardware, especially in combination with closed-loop training.
+Some improvements on the usability side would be a streamlined deployment mechanism, that allows to easily and automatically install and update the experiment in an NRP installation. Also, support for external (e.g. cloud) GPUs might be helpful to enable fluent simulations independent of the locally available hardware, especially in combination with closed-loop training.
