@@ -33,5 +33,11 @@ Extending the scenario to include other traffic signs would be rather straight-f
 Other limitations, such as reactions to other traffic participants, are, however, much more difficult to overcome.
 Therefore, and in accordance with the scope of the project, this project is to be understood as an example and demonstration of some capabilities of the neurorobotics platform in combination with deep learning methods, as opposed to a demonstration of advanced autonomous driving.
 
-
 \subsection{Outlook}
+There are several potential improvements which could be added to our current implementation in future work. 
+Creating bigger, and more diverse NRP scenes would allow to test-run the Experiment in a wider set of conditions.
+Implementing lane detection and following would be the basis for running the car in a more natural road scene that includes curves, multiple roads, and intersections. 
+
+A larger-scale extension would be to enable closed-loop training, so that the car can improve it's detection capabilities and driving scills while driving, and potentially use learned control through reinforcement learning.
+
+Some improvements on the usability side would be a streamlined deployment mechanism, that allows to easily and automatically install and update the experiment in an NRP installation. Also, support for external (cloud) GPUs might be helpful to enable fluent simulations independent of the locally available hardware, especially in combination with closed-loop training.
