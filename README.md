@@ -12,7 +12,7 @@ recognized automatically (e.g. letting the car adjust its speed)
 ## Milestones
 - [x] Asset preparation and import to NRP (traffic signs, road)
 - [x] Environment setup in NRP (street, car, signs)
-- [ ] Car logic, reaction to signs
+- [x] Car logic, reaction to signs
 - [x] Dataset preparation and CNN training
 - [x] Model integration, inference interface and image processing
 

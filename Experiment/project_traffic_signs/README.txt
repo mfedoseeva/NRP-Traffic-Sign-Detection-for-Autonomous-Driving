@@ -22,8 +22,15 @@ If you are unable to write to /opt, pick a different path and note it for below.
 cd /opt
 git clone https://github.com/tensorflow/models
 cd models/research
-protoc object_detection/protos/*.proto --python_out=.
 
+=== now install protoc === 
+=== download and extract https://github.com/protocolbuffers/protobuf/releases/download/v3.4.0/protoc-3.4.0-linux-x86_64.zip
+
+<protoc dir>/bin/protoc object_detection/protos/*.proto --python_out=.
+=== now we need to install the object_detection from the tensorflow/models/research directory into the tensorflow virtualenv:
+source <path to tensorflow_venv>/bin/activate
+cd /opt/models/research
+pip install -e .
 
 === Ensure the Models Are Accessible By Your User ===
 
