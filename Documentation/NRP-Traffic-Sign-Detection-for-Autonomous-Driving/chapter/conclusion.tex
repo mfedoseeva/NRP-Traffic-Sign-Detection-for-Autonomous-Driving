@@ -1,16 +1,37 @@
 
 \section{Conclusion}
 
-Summary - Discussion - Limitations - Outlook \\
+\subsection{Summary}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+In this project we developed and implemented a demonstration of closed-loop traffic sign detection for the control of a virtual car on the Neurorobotics Platform. 
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+A road scene was modeled and equipped with traffic signs of different speed limits and a stop sign, and a virtual car was set up to drive down the road. The Speed of the car was controlled via the (virtual) voltage that is supplied to the motors, and adapted in accordance with the detected traffic signs.
 
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+Images from a virtual camera on the car were passed to a neural network model through NRP transfer functions, processed by a transfer-learned tensorflow neural network model, and the detection results were passed back to the motor control of the car.
 
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+Both correctness and speed of the neural network inference were evaluated in the NRP environment. The evaluation shows that the inference works robustly and is able to successfully detect the traffic sings.
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+\subsection{Discussion}
+%TODO
 
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+\subsection{Limitations}
+The scope of this project was to implement a demonstration scenario. 
+The road scene is therefore relatively simple, and only a small subset of real-world traffis signs occur and need to be detected. 
+Examples of elements that do not occur in our scenario, but do exist in real-world traffic are, among others:
+\begin{itemize}
+ \item other speed-related sings than 100km/h, 20km/h and stop
+ \item traffic signs that are not speed related, such as informational signs, warnings, parking sings, etc
+ \item curved roads, requiring steering and lane-following
+ \item intersections
+ \item other cars
+ \item road-works
+ \item pedestrians, cyclists, animals, miscellaneous objects
+ \item etc.
+\end{itemize}
+
+Extending the scenario to include other traffic signs would be rather straight-forward and is very likely feasible, as long as pre-programmed reactions to the detection events are appropriate. 
+Other limitations, such as reactions to other traffic participants, are, however, much more difficult to overcome.
+Therefore, and in accordance with the scope of the project, this project is to be understood as an example and demonstration of some capabilities of the neurorobotics platform in combination with deep learning methods, as opposed to a demonstration of advanced autonomous driving.
+
+
+\subsection{Outlook}
