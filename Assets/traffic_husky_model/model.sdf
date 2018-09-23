@@ -34,7 +34,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky_model/meshes/body.dae</uri>
+            <uri>model://traffic_husky_model/meshes/body.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -78,7 +78,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky_model/meshes/wheel.dae</uri>
+            <uri>model://traffic_husky_model/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -140,7 +140,7 @@
         <pose>0 0 0 -3.14159 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky_model/meshes/wheel.dae</uri>
+            <uri>model://traffic_husky_model/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -202,7 +202,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky_model/meshes/wheel.dae</uri>
+            <uri>model://traffic_husky_model/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -264,7 +264,7 @@
         <pose>0 0 0 -3.14159 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky_model/meshes/wheel.dae</uri>
+            <uri>model://traffic_husky_model/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -326,7 +326,7 @@
         <pose>0 0 0 1.570796327 0 -1.570796327</pose>
         <geometry>
           <mesh>
-            <uri>model://husky_model/meshes/eye_vision_camera.dae</uri>
+            <uri>model://traffic_husky_model/meshes/eye_vision_camera.dae</uri>
           </mesh>
         </geometry>
       </visual>
