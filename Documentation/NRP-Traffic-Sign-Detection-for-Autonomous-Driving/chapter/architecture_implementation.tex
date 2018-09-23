@@ -1,7 +1,33 @@
 
 \section{Architecture and Implementation}
 
-This chapter describes the architecture and the implementation of the traffic sign detection of an autonomous car in the neurorobotics platform. The architecture……The implementation part will be described as follows: A. Car logic setup B. recognition of the traffic sign C. Traffic sign model setup D. road and background model setup……
+This chapter describes the architecture and the implementation of the traffic sign detection of an autonomous car in the neurorobotics platform. The implementation part will be described as follows: 
+\begin{itemize}
+	\item Traffic signs detection
+	\item Car control
+	\item Environment setup: street and car model
+	\item Traffic signs 
+\end{itemize}
+
+\subsection{Detection of Traffic Signs}
+
+To implement the detection of traffic signs a neural network model was trained. Training was performed on pre-trained model from the tensorflow object detection models zoo, namely ssdlite mobilenet v2 model pre-trained on COCO dataset\cite{DBLP:journals/corr/HuangRSZKFFWSG016}. MobileNets family of computer vision models is designed for resource constraint environments while maintaining high accuracy. They target mobile and embedded devices, their careful use of resources allows us to achieve satisfactory inference speed when running the detection in NRP, which does not support the use of graphics processing units at the moment. The model also implements SSDLite framework, which is a mobile friendly version of the regular SSD framework\cite{DBLP:journals/corr/abs-1801-04381}. This use of multibox detector method allows the model to perform localization of objects, which allows us to get the bounding boxes of the traffic signs. 
+
+
+The dataset for training was fully generated without using existing traffic signs datasets. One image per each traffic sign used in the experiment was pasted on backgrounds, which were images randomly drawn from the COCO dataset. By providing sufficiently many and diverse images (not semantically related to the traffic scenes) we attempt to make our model generalize well in any environment. 3000 (three thousand) images per each traffic sign was generated as well as automatically produced annotation, which contained the class of the image and location of the traffic sign in the image by providing x coordinate minimum and maximum and y coordinate minimum and maximum. To make the detection more robust several random modifications were applied to signs in each image, such as perspective deformation, brightness change, blur and noise. In \ref{fig:img} we can see an example of one image from a total of 9000 images dataset.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{chapter/images/img-1.jpg}
+  \caption{Example of an image generated to train the neural network model}
+  \label{fig:img}
+\end{figure}
+
+
+After training was performed several model checkpoints were tested in NRP and the best performing model was selected by simple observation of the performance. The current version of the model was achieved at step 18999 with the batch of 16 images, which is less than 37 epochs. The batch size was constrained by the GPU's memory on the personal computer used for training. Hyperparameters such as learning rate were used from the default training configuration from the tensorflow object detection api. Training script and config file, as well as dataset generation script will be submitted as a project deliverable. 8 percent of images were used as validation set, breaking down the 9000 images into 720 images validation and 8280 images training set.
+
+
+Inference graph was saved in the .opt/graph\_def directory of the NRP container as well as accompanying label map. The training was performed using tensorflow and the transfer function of our experiment makes use of tensorflow api. Object detector transfer function runs a tensorflow session, which returns the number of detections in an image it gets from the car's camera, scores for these detections, classes and boxes, where boxes are maximum and minimum x and y coordinates of the detected traffic signs. Afterwards the square of the bounding box for each detection is calculated to determine, which of the signs has the biggest bounding box, assuming that this sign is the closest one to the car. After such sign is determined it is passed to the car's transfer function, where the car's logic is implemented. 
 
 \subsection{Speed Limit Sign Section}
 
