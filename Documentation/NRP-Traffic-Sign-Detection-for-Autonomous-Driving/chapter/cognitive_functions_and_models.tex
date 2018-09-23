@@ -1,5 +1,5 @@
 
-\section{Cognitive Functions and Models involved}
+\section{Cognitive Functions and Models Involved}
 
 \subsection{Cognitive Functions}
 Several cognitive functions are implemented in our virtual car. 
@@ -25,9 +25,9 @@ The NRP car model has both short-term and long-term memory, which allows it to s
 Short term memory is used as the working memory that supports the perception-action loop: it stores the camera image until it is processed by the neural network, as well as the neuron activations during neural network inference, and the variables in the python code that post-processes the neural-network output and controls the motors.
 
 Long term memory is implemented by the neural network weights, which can store information during training (although training is currently not done closed-loop, but open-loop). That information is stored in the saved model file, and can be retrieved during operation of the car, when the stored model is loaded and used for inference on the camera images.
-This long term Memory stores knowledge about our NRP world, and about how traffic signs look, and how they differ from roads and background, and from each other.
+This long term memory stores knowledge about our NRP world, and about how traffic signs look, and how they differ from roads and background, and from each other.
 
-Further knowledge is stored (in code) for the programmed aspects of the robot behaviour, like the required motor control signals and voltages that  result in velocities that are appropriate for each traffic sign.
+Further knowledge is stored (in code) for the programmed aspects of the robot behavior, like the required motor control signals and voltages that  result in velocities that are appropriate for each traffic sign.
 
 
 \subsubsection{Learning and Development}
@@ -36,12 +36,12 @@ For our model car, learning happens in open-loop mode, when the neural network i
 Development is \emph{not} implemented, as the car body, including sensors and actuators, does not evolve, but is fixed.
 
 \subsubsection{Autonomy}
-The virtual NRP car has only a rather limited form of autonomy: In a virtual world like ours, it can safely drive down a road and comply with traffic regulations. It can safely handle changes in the order, orientation and exact size of the traffic signs (behavioural autonomy). However it cannot handle environments that differ more, like have roads with curves, because lane following along road turns is not implemented.
+The virtual NRP car has only a rather limited form of autonomy: In a virtual world like ours, it can safely drive down a road and comply with traffic regulations. It can safely handle changes in the order, orientation and exact size of the traffic signs (behavioral autonomy). However it cannot handle environments that differ more, like have roads with curves, because lane following along road turns is not implemented.
 
 \subsubsection{Social Cognition}
 No social cognition is implemented in the NRP car, as the virtual world it operates in is single-actor.
 
-\subsubsection{Conciousness}
+\subsubsection{Consciousness}
 We do not believe that consciousness has emerged in the NRP car. 
 
 \subsection{Cognition Model}
@@ -49,12 +49,4 @@ The NRP car implements a combination of both cognitivist and emergent principles
 
 The image recognition in the neural network follows the emergent paradigm, since only the architecture of the network is specified, and the image recognition capabilities emerge during training.
 
-Other aspects of the car, however, fit better into the cognitivist paradigm: The reactions to the detected traffic sign are encoded in rules, which provide a mapping of sign types to target speeds, and define how to control the motors. (These aspects of the behaviour are implemented in the python code, as opposed to implicitly given by the neural network weights)
-
-
-
-
-
-
-
-
+Other aspects of the car, however, fit better into the cognitivist paradigm: The reactions to the detected traffic sign are encoded in rules, which provide a mapping of sign types to target speeds, and define how to control the motors. (These aspects of the behavior are implemented in the python code, as opposed to implicitly given by the neural network weights)
