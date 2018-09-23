@@ -5,6 +5,14 @@ This chapter describes the architecture and the implementation of the traffic si
 
 The architecture involves NRP and TensorFlow. In NRP, a street environment is established to carry out the simulation. A car equipped with camera is set up in the environment. After starting the simulation, the car logic controls its velocity. It subscribes to rostopic "sign". The object detector node will publish sign value and the car responses to the value. The object detector node use TensorFlow object detection module to recognize images from video. The convolutional neural network model is trained in TensorFlow.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{chapter/images/img-1.png}
+  \caption{Architecture of the NRP traffic sign detection for autonomous driving}
+  \label{fig:img}
+\end{figure}
+
+
 The implementation part will be described as follows: 
 \begin{itemize}
 	\item Traffic signs detection
@@ -23,7 +31,7 @@ The dataset for training was fully generated without using existing traffic sign
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.7\textwidth]{chapter/images/img-1.jpg}
+  \includegraphics[width=0.7\textwidth]{chapter/images/img-2.jpg}
   \caption{Example of an image generated to train the neural network model}
   \label{fig:img}
 \end{figure}
@@ -83,6 +91,14 @@ We put three large concrete ground models below road and traffic signs. This is 
 We also encountered a problem when we run our car on the road. The car wouldn't follow straight lines. The reason was the friction between road and wheels of the car. They both used ode engine to calculate friction. Parameters mu and mu1 control the contact force. So parameters in the model are modified to keep the car on a straight line. 
 
 After setting up all the environment, we downloaded the world model so that we can use it later.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{chapter/images/img-3.png}
+  \caption{A sreenshot of the environment in the traffic sign detection experiment}
+  \label{fig:img}
+\end{figure}
 
 
 \subsection{Robot Setup Section}
